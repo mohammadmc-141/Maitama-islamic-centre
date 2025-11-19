@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Qur'an Memorization Portal - Login</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      background: #f3f4f6;
+      color: #0f172a;
+    }
+    .shell {
+      margin: 2.5rem auto;
+      width: 100%;
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: 1.2fr 1.4fr;
+      background: #ffffff;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.65);
+      border: 1px solid rgba(15,23,42,0.85);
+    }
+    .hero {
+      background: linear-gradient(160deg, #bbf7d0, #4ade80);
+      padding: 2.25rem 2.5rem;
+      color: #022c22;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .hero-logo img {
+      width: 52px;
+      height: 52px;
+      border-radius: 0.75rem;
+      object-fit: cover;
+      background: #bef264;
+    }
+    .hero-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero-subtitle {
+      font-size: 0.86rem;
+      opacity: 0.9;
+    }
+    .hero-body {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .hero-body strong { display: block; margin-bottom: 0.35rem; }
+    .hero-footer { font-size: 0.78rem; margin-top: 1.75rem; opacity: 0.9; }
+
+    .card {
+      padding: 2.5rem 3rem;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.45rem;
+      color: #f9fafb;
+    }
+    p.subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 1.75rem;
+    }
+    label { display: block; font-size: 0.82rem; margin-bottom: 0.35rem; color: #e5e7eb; }
+    input {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border-radius: 0.6rem;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      color: #111827;
+      font-size: 0.9rem;
+    }
+    input:focus { outline: none; border-color: #22c55e; box-shadow: 0 0 0 1px #22c55e33; }
+    .field { margin-bottom: 1.05rem; }
+    .button {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: #22c55e;
+      color: #022c22;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 0.75rem;
+    }
+    .button:hover { background: #16a34a; }
+    .footer { margin-top: 1.4rem; font-size: 0.78rem; color: #9ca3af; }
+    .brand-small { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.35rem; }
+    .theme-toggle {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      padding: 0.25rem 0.7rem;
+      background: #f9fafb;
+      color: #111827;
+      cursor: pointer;
+      margin-left: auto;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Dark mode overrides */
+    body.dark-mode {
+      background: radial-gradient(circle at top left, #0b1120 0, #020617 50%, #000000 90%);
+      color: #e5e7eb;
+    }
+    body.dark-mode .shell { background: #020617; border-color: rgba(15,23,42,0.95); }
+    body.dark-mode .hero { background: linear-gradient(160deg, #15803d, #16a34a); color: #022c22; }
+    body.dark-mode .card { background: #020617; }
+    body.dark-mode h1 { color: #f9fafb; }
+    body.dark-mode p.subtitle { color: #9ca3af; }
+    body.dark-mode label { color: #e5e7eb; }
+    body.dark-mode input { border-color: #1f2937; background: #020617; color: #e5e7eb; }
+    body.dark-mode .footer { color: #6b7280; }
+    body.dark-mode .brand-small { color: #9ca3af; }
+    body.dark-mode .theme-toggle { background: #020617; color: #e5e7eb; border-color: #4b5563; }
+
+    @media (max-width: 800px) {
+      .shell { grid-template-columns: 1fr; margin: 1.5rem; }
+      .hero { display: none; }
+      .card { padding: 2rem 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="hero">
+      <div>
+        <div class="hero-logo">
+          <img src="logo.png" alt="Maitama Central Mosque logo">
+          <div>
+            <div class="hero-title">Maitama Central Mosque</div>
+            <div class="hero-subtitle">Qur'an Memorization School</div>
+          </div>
+        </div>
+        <div class="hero-body">
+          <strong>Welcome to the Teachers Portal</strong>
+          <span>Track each student's hifdh, tajweed, daily reviews, and class assignments in one place.</span>
+        </div>
+      </div>
+      <div class="hero-footer">Designed for Qur'an memorization classes at Maitama Central Mosque.</div>
+    </aside>
+    <main class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;">
+        <div class="brand-small">Maitama Central Mosque</div>
+        <button type="button" id="theme-toggle" class="theme-toggle">Dark mode</button>
+      </div>
+      <h1>Sign in to your class</h1>
+      <p class="subtitle">Enter your details to open your dashboard.</p>
+      <form action="index.html" method="get">
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="teacher@example.com" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required>
+        </div>
+        <button class="button" type="submit">Login</button>
+      </form>
+      <div class="footer">Demo login only &mdash; any email/password will open the dashboard.</div>
+    </main>
+  </div>
+  <script>
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('theme-toggle');
+      const saved = window.localStorage.getItem('mmc-theme');
+      if (saved === 'dark') {
+        body.classList.add('dark-mode');
+        if (toggle) toggle.textContent = 'Light mode';
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          const isDark = body.classList.toggle('dark-mode');
+          toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+          window.localStorage.setItem('mmc-theme', isDark ? 'dark' : 'light');
+        });
+      }
+      const form = document.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const emailInput = document.getElementById('email');
+          const emailValue = emailInput ? emailInput.value.trim() : '';
+          // Mark that a teacher has signed in (demo only) and store their email
+          window.localStorage.setItem('mmc-signed-in', 'true');
+          if (emailValue) {
+            window.localStorage.setItem('mmc-teacher-email', emailValue.toLowerCase());
+          }
+          window.location.href = 'index.html';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+
+
